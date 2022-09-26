@@ -8,12 +8,14 @@
 ### Ejecucion del proyecto
 dotnet run o dotnet watch run si es por consola
 
-### Construido con 🛠️
+### Herramientas utilizadas 🛠️
 
 + C# (Net core 6)
 + ASP.NetCore
 + Bootstrap 
 + Notyf: JS Toast Notifications
++ Visual Studio
++ Visual Studio Code
 
 
 
