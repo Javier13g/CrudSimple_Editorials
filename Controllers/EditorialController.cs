@@ -1,4 +1,5 @@
-﻿using CrudSimple_Editorials.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using CrudSimple_Editorials.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -8,11 +9,16 @@ namespace CrudSimple_Editorials.Controllers
 {
     public class EditorialController : Controller
     {
+        //Notificaciones
+        private readonly INotyfService _notyf;
+        
         Uri urlAPI = new Uri("https://localhost:7172/api");
         HttpClient Editoriales;
 
-        public EditorialController()
+        //Resto de controladores
+        public EditorialController(INotyfService notyf)
         {
+            _notyf = notyf;
             Editoriales = new HttpClient();
             Editoriales.BaseAddress = urlAPI;
         }
@@ -42,7 +48,13 @@ namespace CrudSimple_Editorials.Controllers
             HttpResponseMessage response = Editoriales.PostAsync(Editoriales.BaseAddress + "/Editorials", content).Result;
             if (response.IsSuccessStatusCode)
             {
+                _notyf.Success("Registro guardado");
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                _notyf.Error("Some Error Message");
+
             }
             return View();
         }
@@ -68,7 +80,12 @@ namespace CrudSimple_Editorials.Controllers
             HttpResponseMessage response = Editoriales.PutAsync(Editoriales.BaseAddress + "/Editorials/" + Editorials.CodEditorial, content).Result;
             if (response.IsSuccessStatusCode)
             {
+                _notyf.Success("Registro actualizado");
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                _notyf.Error("Some Error Message");
             }
             return View("Edit", Editorials);
         }
@@ -78,6 +95,7 @@ namespace CrudSimple_Editorials.Controllers
             HttpResponseMessage response = Editoriales.DeleteAsync(Editoriales.BaseAddress + "/Editorials/" + id).Result;
             if (response.IsSuccessStatusCode)
             {
+                _notyf.Success("Registro eliminado");
                 return RedirectToAction("Index");
             }
 
