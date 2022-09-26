@@ -43,6 +43,30 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<div class="container2">
+    <h1>Editar</h1>
+    <h4>Editorial</h4>
+    <a asp-action="Index">Atras</a>
+</div>
+
+<form class="form-registrer" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CodEditorial" />
+    <div>
+        <input asp-for="NombreEditorial" class="controls" type="text" placeholder="Editar Nombre" />
+        <span asp-validation-for="NombreEditorial" class="text-danger"></span>
+    </div>
+    <div>
+        <input asp-for="LatitudUbicacion" class="controls" placeholder="Editar latitud" />
+        <span asp-validation-for="LatitudUbicacion" class="text-danger"></span>
+    </div>
+    <div>
+        <input asp-for="LongitudUbicacion" class="controls" placeholder="Editar longitud" />
+        <span asp-validation-for="LatitudUbicacion" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Save" class="botons" />
+</form>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

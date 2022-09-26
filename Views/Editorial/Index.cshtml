@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="~/css/table.css" />
 </head>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
+<h1 class="h1">Index</h1>
 
 <div class="table-wrapper">
+    <h1>Index</h1>
+
+<p>
+        <a asp-action="Create" class="btn btn-primary btn-lg btn-block">Create New</a>
+</p>
     <table class="fl-table">
         <thead>
             <tr>
@@ -43,18 +43,8 @@
                         @Html.DisplayFor(modelData => album.LongitudUbicacion)
                     </td>
                     <td>
-                        <div class="wrapper">
-                            <div class="icon facebook">
-                                <div class="tooltip">Edit</div>
-                                @Html.ActionLink("E", "Edit", new { id = album.CodEditorial})
-                                <span><i class="fab fa-facebook-f"></i></span>
-                            </div>
-                            <div class="icon instagram">
-                                <div class="tooltip">Delete</div>
-                                @Html.ActionLink("X", "Delete", new { id = album.CodEditorial})
-                                <span><i class="fab fa-instagram"></i></span>
-                            </div>
-                        </div>
+                        @Html.ActionLink("E", "Edit", new { id = album.CodEditorial})
+                          @Html.ActionLink("X", "Delete", new { id = album.CodEditorial})
                     </td>
                 </tr>
             }
