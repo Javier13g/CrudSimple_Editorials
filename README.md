@@ -1,0 +1,2 @@
+# CrudSimple_Editorials
+ 

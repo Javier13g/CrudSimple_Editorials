@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CrudSimple_Editorials.Models.EditoralModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/table.css" />
+</head>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre Editorial</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var album in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelData => album.CodEditorial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelData => album.NombreEditorial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelData => album.LatitudUbicacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelData => album.LongitudUbicacion)
+                    </td>
+                    <td>
+                        <div class="wrapper">
+                            <div class="icon facebook">
+                                <div class="tooltip">Edit</div>
+                                @Html.ActionLink("E", "Edit", new { id = album.CodEditorial})
+                                <span><i class="fab fa-facebook-f"></i></span>
+                            </div>
+                            <div class="icon instagram">
+                                <div class="tooltip">Delete</div>
+                                @Html.ActionLink("X", "Delete", new { id = album.CodEditorial})
+                                <span><i class="fab fa-instagram"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+</div>
+
+
