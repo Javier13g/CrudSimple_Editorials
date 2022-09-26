@@ -4,44 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<h4>EditoralModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CodEditorial" class="control-label"></label>
-                <input asp-for="CodEditorial" class="form-control" />
-                <span asp-validation-for="CodEditorial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NombreEditorial" class="control-label"></label>
-                <input asp-for="NombreEditorial" class="form-control" />
-                <span asp-validation-for="NombreEditorial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LatitudUbicacion" class="control-label"></label>
-                <input asp-for="LatitudUbicacion" class="form-control" />
-                <span asp-validation-for="LatitudUbicacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LongitudUbicacion" class="control-label"></label>
-                <input asp-for="LongitudUbicacion" class="form-control" />
-                <span asp-validation-for="LongitudUbicacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 <div class="container2">
     <h1>Editar</h1>

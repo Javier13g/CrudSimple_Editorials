@@ -43,8 +43,8 @@
                         @Html.DisplayFor(modelData => album.LongitudUbicacion)
                     </td>
                     <td>
-                        @Html.ActionLink("E", "Edit", new { id = album.CodEditorial})
-                          @Html.ActionLink("X", "Delete", new { id = album.CodEditorial})
+                        @Html.ActionLink("Editar", "Edit", new { id = album.CodEditorial})
+                          @Html.ActionLink("Eliminar", "Delete", new { id = album.CodEditorial})
                     </td>
                 </tr>
             }

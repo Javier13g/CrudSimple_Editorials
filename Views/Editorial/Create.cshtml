@@ -13,19 +13,37 @@
     <a asp-action="Index">Atras</a>
 </div>
 
-<form class="form-registrer" asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="form-registrer" asp-action="Create" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger" required></div>
     <div>
-        <input asp-for="NombreEditorial" class="controls" type="text" placeholder="Añadir Nombre" />
+        <input asp-for="NombreEditorial" class="controls" type="text" placeholder="Añadir Nombre" required />
         <span asp-validation-for="NombreEditorial" class="text-danger"></span>
+        <div class="invalid-feedback">
+            Campo vacio
+        </div>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
     </div>
     <div>
-        <input asp-for="LatitudUbicacion" class="controls" placeholder="Añadir latitud" />
+        <input asp-for="LatitudUbicacion" class="controls" placeholder="Añadir latitud" required />
         <span asp-validation-for="LatitudUbicacion" class="text-danger"></span>
+        <div class="invalid-feedback">
+            Campo vacio
+        </div>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
     </div>
     <div>
-        <input asp-for="LongitudUbicacion" class="controls" placeholder="Añadir longitud" />
+        <input asp-for="LongitudUbicacion" class="controls" placeholder="Añadir longitud" required />
         <span asp-validation-for="LatitudUbicacion" class="text-danger"></span>
+        <div class="invalid-feedback">
+            Campo vacio
+        </div>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
     </div>
     <input type="submit" value="Añadir" class="botons" />
 </form>
